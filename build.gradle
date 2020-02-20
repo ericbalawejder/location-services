@@ -1,11 +1,16 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
 group 'com.services.location'
 version '0.0.1-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 11
+
+project.ext {
+    configPath = "$rootProject.projectDir/config/"
+    dropwizardVersion = '2.0.1'
+}
 
 repositories {
     mavenCentral()
@@ -13,5 +18,14 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile group: 'io.dropwizard', name: 'dropwizard-core', version: '2.0.1'
+    compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+    compile group: 'io.dropwizard', name: 'dropwizard-db', version: dropwizardVersion
+    compile group: 'io.dropwizard', name: 'dropwizard-jdbi3', version: dropwizardVersion
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
+}
+
+mainClassName = "com.services.location.configuration.LocationApplication"
+
+run {
+    args 'server', configPath + 'config.yml'
 }
