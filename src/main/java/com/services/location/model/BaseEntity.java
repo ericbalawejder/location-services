@@ -6,6 +6,9 @@ public class BaseEntity {
     private String createdOn;
     private String modifiedOn;
 
+    public BaseEntity() {
+    }
+
     public BaseEntity(long id, String createdOn, String modifiedOn) {
         this.id = id;
         this.createdOn = createdOn;

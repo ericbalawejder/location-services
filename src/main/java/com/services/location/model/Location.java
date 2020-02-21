@@ -12,6 +12,9 @@ public class Location extends BaseEntity {
     private String code;
     private String name;
 
+    public Location() {
+    }
+
     public Location(long id, String createdOn, String modifiedOn, Country country,
                     State state, Type type, String code, String name) {
         super(id, createdOn, modifiedOn);

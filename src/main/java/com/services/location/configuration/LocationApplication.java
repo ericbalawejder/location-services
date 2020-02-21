@@ -19,7 +19,7 @@ public class LocationApplication extends Application<LocationConfiguration> {
         System.out.println("Location Services Application");
         final JdbiFactory factory = new JdbiFactory();
         final Jdbi jdbi = factory.build(environment, configuration.getDataSourceFactory(), "mysql");
-        
+
         final LocationsDao locationsDao = jdbi.onDemand(LocationsDao.class);
         final LocationsService locationsService = new LocationsService(locationsDao);
         final LocationsResource locationsResource = new LocationsResource(locationsService);
