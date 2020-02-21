@@ -9,7 +9,7 @@ database:
   password: location_services_db
 
   # the JDBC URL
-  url: jdbc:mysql://localhost:3306/locations
+  url: jdbc:mysql://localhost:3306/Locations
 
   # any properties specific to your JDBC driver:
   properties:

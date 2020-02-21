@@ -2,7 +2,7 @@ package com.services.location.data;
 
 public enum State {
 
-    ARIZONA("Arizona", "AR"),
+    ARIZONA("Arizona", "AZ"),
     COLORADO("Colorado", "CO");
 
     private String name;
