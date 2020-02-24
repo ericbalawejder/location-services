@@ -8,5 +8,3 @@ COPY location-services.jar .
 COPY config.yml .
 
 CMD ["java", "-jar", "location-services.jar", "server", "config.yml"]
-
-#java -jar location-services.jar server config.yml

@@ -1,0 +1,28 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:latest
+    container_name: location-services-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USERNAME: root
+      MYSQL_DATABASE: "Locations"
+    restart: always
+    volumes:
+    - mysql_data:/var/lib/mysql:rw
+
+  location-services:
+    build:
+      context: ../location-services/
+    ports:
+      - 8080:8080
+      - 8081:8081
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+    restart: always
+    container_name: location-services-container
+
+volumes:
+  mysql_data:

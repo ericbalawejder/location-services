@@ -3,13 +3,13 @@ database:
   driverClass: com.mysql.cj.jdbc.Driver
 
   # the username
-  user: location_services_db
+  user: root
 
   # the password
-  password: location_services_db
+  password: root
 
   # the JDBC URL
-  url: jdbc:mysql://localhost:3306/Locations
+  url: jdbc:mysql://location-services-mysql:3306/Locations
 
   # any properties specific to your JDBC driver:
   properties:

@@ -21,7 +21,7 @@ VALUES (
     'desert'
 );
 
-NSERT INTO locations (
+INSERT INTO locations (
     id,
     createdOn,
     modifiedOn,
@@ -42,7 +42,7 @@ VALUES (
     'dry'
 );
 
-NSERT INTO locations (
+INSERT INTO locations (
     id,
     createdOn,
     modifiedOn,
