@@ -6,7 +6,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USERNAME: root
-      MYSQL_DATABASE: "Locations"
+      MYSQL_DATABASE: "locations"
     restart: always
     volumes:
     - mysql_data:/var/lib/mysql:rw
