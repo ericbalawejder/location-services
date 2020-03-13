@@ -24,6 +24,10 @@ sourceCompatibility = 11
 project.ext {
     configPath = "$rootProject.projectDir/config/"
     dropwizardVersion = '2.0.1'
+    junitJupiterVersion = '5.6.0'
+    mockitoVersion = '3.3.0'
+    byteBuddyVersion = '1.10.5'
+    assertjVersion = '3.15.0'
 }
 
 repositories {
@@ -31,11 +35,24 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junitJupiterVersion
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junitJupiterVersion
+    testCompile group: 'org.assertj', name: 'assertj-core', version: assertjVersion
+    testCompile group: 'io.dropwizard', name: 'dropwizard-testing', version: dropwizardVersion
+    testCompile group: 'org.mockito', name: 'mockito-junit-jupiter', version: mockitoVersion
+    testCompile group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
+    compile group: 'net.bytebuddy', name: 'byte-buddy', version: byteBuddyVersion
+    testCompile group: 'net.bytebuddy', name: 'byte-buddy-agent', version: byteBuddyVersion
+    testCompile group: 'org.objenesis', name: 'objenesis', version: '2.6'
+
     compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
     compile group: 'io.dropwizard', name: 'dropwizard-db', version: dropwizardVersion
     compile group: 'io.dropwizard', name: 'dropwizard-jdbi3', version: dropwizardVersion
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 mainClassName = "com.services.location.configuration.LocationApplication"

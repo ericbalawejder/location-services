@@ -1,5 +1,7 @@
 package com.services.location.data;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public enum Country {
 
     US("United States of America", "US"),
